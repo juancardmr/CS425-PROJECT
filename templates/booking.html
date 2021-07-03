@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>booking</title>
+</head>
+<body>
+<style>
+
+ td {
+        width: 150px;
+        text-align: center;
+        border: 1px solid black;
+        padding: 5px;
+      }
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>Economy Price</th>
+            <th>Select</th>
+            <th>First Class Price</th>
+            <th>Select</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+
+            <tr>
+                <td>{{row[0]}}</td>
+                <td><form name="payment" action="/payment" method="post">
+                    <input id="payment1" type="submit" name="payment" value={{row[0]}} />
+                   </form></td>
+                <td>{{row[1]}}</td>
+                <td><form name="payment" action="/payment" method="post" >
+                    <input id="payment2" type="submit" name="payment" value={{row[1]}} />
+                   </form> </td>
+            </tr>
+
+        {% endfor %}
+    </tbody>
+
+</table>
+</body>
+</html>

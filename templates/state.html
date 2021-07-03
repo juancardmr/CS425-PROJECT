@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>state</title>
+</head>
+<body>
+<style>
+
+ td {
+        width: 150px;
+        text-align: center;
+        border: 1px solid black;
+        padding: 5px;
+      }
+</style>
+    <form  action="" method="POST">
+        <div align="center" id="stateselection">
+        <h1>Search for flights</h1>
+        <select id="state" name="state">
+            <option selected disabled>Select a departure Location</option>
+            {% for item in items %}
+            <option value="{{item.state}}">{{item.state}}</option>
+            {% endfor %}
+        </select>
+
+        <button class="button execute" name="submit" value="submit">Next</button>
+        </div>
+    </form>

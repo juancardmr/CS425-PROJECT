@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flights</title>
+</head>
+<body>
+<style>
+
+ td {
+        width: 150px;
+        text-align: center;
+        border: 1px solid black;
+        padding: 5px;
+      }
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>Departure Airport</th>
+            <th>Departure time</th>
+            <th>Arrival Airport</th>
+            <th>Arrival time</th>
+            <th>Select</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+
+            <tr>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+
+                <td>
+
+                   <form name="book" action="/booking" method="post" >
+                    <input id="book" type="submit" name="book" value={{row[0]}} />
+                   </form>
+
+                </td>
+
+            </tr>
+
+        {% endfor %}
+    </tbody>
+
+</table>
+<form>
+
+</form>
+</body>
+</html>
+</body>
+</html>
